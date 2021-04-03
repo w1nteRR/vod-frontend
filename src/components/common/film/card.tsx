@@ -1,14 +1,16 @@
-import { FC } from 'react'
+import { memo } from 'react'
 import { Paper } from '@material-ui/core'
 
-import { useFilmStyles } from './styles'
+import { useFilmCardStyles } from './styles'
 
 import { IFilmCardProps, IFilmCardStyles } from './interfaces'
 
-export const FilmCard: FC<IFilmCardProps> = ({
-  image
+export const FilmCard = memo<IFilmCardProps>(({
+  image,
+  onClick
 }) => {
-  const styles = useFilmStyles({ image } as IFilmCardStyles)
 
-  return <Paper className={styles.card} />
-}
+  const styles = useFilmCardStyles({ image } as IFilmCardStyles)
+
+  return <Paper className={styles.card} onClick={onClick} />
+})

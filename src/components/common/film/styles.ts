@@ -1,10 +1,10 @@
 import { makeStyles, Theme } from "@material-ui/core"
 import { IFilmCardStyles } from "./interfaces"
 
-const WIDTH = 350
-const HEIGHT = 200
+const WIDTH = 310
+const HEIGHT = 170
 
-export const useFilmStyles = makeStyles<Theme, IFilmCardStyles>(({
+export const useFilmCardStyles = makeStyles<Theme, IFilmCardStyles>(({
   card: ({ image }) => ({
     minWidth: WIDTH,
     height: HEIGHT,
@@ -18,6 +18,10 @@ export const useFilmStyles = makeStyles<Theme, IFilmCardStyles>(({
 
     margin: '0 10px 10px 0',
 
-    cursor: 'pointer'
+    cursor: 'pointer',
+
+    '&:hover': {
+      opacity: .8
+    }
   })
 }))

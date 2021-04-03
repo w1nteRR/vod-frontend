@@ -8,13 +8,14 @@ export const useNavigationStyles = makeStyles({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '5px 10px',
+    padding: 10,
+    marginBottom: 50
   },
   linksBox: {
     display: 'inherit'
   },
   navlink: {
-    fontSize: 12,
+    fontSize: 14,
     color: 'gray',
     textDecoration: 'none',
     fontWeight: 500,

@@ -24,6 +24,10 @@ export const darkTheme = createMuiTheme({
       fontSize: 9,
       color: 'gray',
       fontWeight: 'bold'
+    },
+    button: {
+      fontSize: 12,
+      textTransform: 'unset'
     }
   }
 })

@@ -10,7 +10,7 @@ export const HeaderNav: FC = () => {
   const styles = useNavigationStyles()
 
   return (
-    <AppBar position="static" className={styles.appbar}>
+    <AppBar position="static" className={`${styles.appbar} backdrop`}>
       <Box>logo</Box>
       <Box className={styles.linksBox}>
         <LinksList />

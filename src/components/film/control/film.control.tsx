@@ -1,10 +1,29 @@
-import { FC } from 'react'
+import { memo } from 'react'
 import { Box, Button } from '@material-ui/core'
 
-export const FilmControl: FC = () => {
+export const FilmControl = memo(() => {
   return (
-    <Box flex={1} display='inherit' alignItems='center'>
-      <Button color='primary' variant='outlined'>Watch now</Button>
+    <Box display='inherit' flexDirection='column'>
+      <Button
+        variant='contained'
+        color='primary'
+        style={btn}
+      >
+        Watch now
+      </Button>
+      <Button
+        variant='contained'
+        color='default'
+        style={btn}
+      >
+        Add to watchlist
+      </Button>
     </Box>
   )
+})
+
+const btn = {
+  padding: 10,
+  width: 200,
+  margin: '10px 0'
 }

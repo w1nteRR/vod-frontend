@@ -15,10 +15,14 @@ export const darkTheme = createMuiTheme({
       fontSize: 48
     },
     body1: {
-      fontSize: 11.5,
+      fontSize: 12.5,
       lineHeight: 2,
-      fontWeight: 500,
-      color: 'silver'
+      fontWeight: 500
+    },
+    body2: {
+      color: 'silver',
+      fontSize: 11,
+      lineHeight: 2
     },
     overline: {
       fontSize: 9,

@@ -1,4 +1,3 @@
-import { Container } from "@material-ui/core"
 import { Redirect, Route, Switch } from "react-router-dom"
 
 import { HeaderNav } from "../components/navigation/header/header.bar"
@@ -6,6 +5,7 @@ import { HeaderNav } from "../components/navigation/header/header.bar"
 import { SignIn } from "../pages/auth/SignIn"
 import { Film } from "../pages/film/Film"
 import { Home } from "../pages/Home"
+import { Profile } from "../pages/profile/Profile"
 
 export const useRoutes = () => {
 
@@ -14,12 +14,11 @@ export const useRoutes = () => {
   if(auth) return (
     <>
     <HeaderNav />
-    <Container>
       <Switch>
         <Route path='/home' component={Home} />
         <Route path='/film/:id' component={Film} />
+        <Route path='/me' component={Profile} />
       </Switch>
-    </Container>
     </>
   )
   

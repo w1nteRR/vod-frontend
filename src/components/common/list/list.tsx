@@ -1,10 +1,19 @@
-import { FC, useRef } from "react"
+import { useRef, memo, ReactNode } from "react"
 
 import { useInfiniteScroll } from '../../../hooks/useInfiniteScroll'
 import { useListStyles } from "./styles"
 
-export const List: FC = ({
-  children
+interface IListProps {
+  onEnd: () => void
+  children?: ReactNode
+  data: Array<unknown>
+  renderItem: (v: unknown, i: number) => ReactNode
+}
+
+export const List = memo<IListProps>(({
+  onEnd,
+  data,
+  renderItem
 }) => {
 
   const listRef = useRef(null)
@@ -15,14 +24,14 @@ export const List: FC = ({
   useInfiniteScroll({ 
     listRef, 
     listEndRef, 
-    callback: () => console.log('load more') 
+    callback: onEnd
   })
 
   return (
     <div ref={listRef} className={styles.list}>
-      {children}
-      <div ref={listEndRef} className={styles.end}>'</div>
+      {data.map((v, i) => renderItem(v, i))}
+      <div ref={listEndRef} className={styles.end}>`</div>
     </div>
   )
-}
+})
 

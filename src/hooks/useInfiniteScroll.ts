@@ -12,13 +12,16 @@ export const useInfiniteScroll = (params: IInfiniteScroll) => {
   useEffect(() => {
     const options = {
       root: listRef.current,
-      threshold: 0
+      threshold: 0,
+      rootMargin: '0px'
     }
 
-    const observer = new IntersectionObserver(callback, options)
-   
-    observer.observe(listEndRef.current!)
+    const observer = new IntersectionObserver(([target]) => {
+      if(target.isIntersecting) { callback() }
+    }, options)
 
+    observer.observe(listEndRef.current!)
+   
     return () => observer.disconnect()
     
   // eslint-disable-next-line react-hooks/exhaustive-deps

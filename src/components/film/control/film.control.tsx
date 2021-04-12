@@ -23,7 +23,8 @@ export const FilmControl = memo(() => {
 })
 
 const btn = {
-  padding: 10,
-  width: 200,
-  margin: '10px 0'
+  padding: 17,
+  width: 270,
+  margin: '5px 0',
+  borderRadius: 10
 }

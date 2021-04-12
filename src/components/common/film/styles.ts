@@ -1,8 +1,8 @@
 import { makeStyles, Theme } from "@material-ui/core"
 import { IFilmCardStyles } from "./interfaces"
 
-const WIDTH = 310
-const HEIGHT = 170
+const WIDTH = 390
+const HEIGHT = 200
 
 export const useFilmCardStyles = makeStyles<Theme, IFilmCardStyles>(({
   card: ({ image }) => ({

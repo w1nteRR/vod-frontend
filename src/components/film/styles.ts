@@ -3,10 +3,8 @@ import { makeStyles } from "@material-ui/styles"
 
 const HEIGHT = 400
 
-export const useFilmStyles = makeStyles<Theme, { wallpaper: string }>(({
+export const useFilmStyles = makeStyles<Theme, { wallpaper?: string }>(({
   main: {
-    margin: 80,
-    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -15,7 +13,6 @@ export const useFilmStyles = makeStyles<Theme, { wallpaper: string }>(({
     height: '100vh', 
     position: 'relative',
     top: 0,
-    backgroundColor: 'silver',
     backgroundImage: `url(${wallpaper})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -36,5 +33,20 @@ export const useFilmStyles = makeStyles<Theme, { wallpaper: string }>(({
   },
   posterContainer: {
     minWidth: 300
+  },
+  infoContainer: {
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column', 
+    justifyContent: 'space-between', 
+    margin: '100px 0' 
+  },
+  trailer: {
+    position: 'absolute', 
+    top: 0, 
+    minWidth: '100%', 
+    height: '100%', 
+    objectFit: 'cover', 
+    zIndex: -1
   }
 }))

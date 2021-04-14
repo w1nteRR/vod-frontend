@@ -11,7 +11,7 @@ export const IntroWrapper = memo<{ wallpaper: string, children: ReactNode }>(({
   
   return (
     <div className={styles.wallpaper}>
-      <div className={`${styles.gradient} brightness`}>
+      <div className={`${styles.gradient}`}>
         <div className={styles.main}>
           {children}
         </div>

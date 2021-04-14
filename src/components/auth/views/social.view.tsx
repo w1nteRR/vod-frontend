@@ -1,13 +1,22 @@
 import { FC } from "react"
 import { Box, Button, Typography } from "@material-ui/core"
+import { useAuth0 } from "@auth0/auth0-react"
 import { indigo } from '@material-ui/core/colors'
 import Icon from '@mdi/react'
 import { mdiFacebook, mdiGoogle } from '@mdi/js'
 
 export const SocialView: FC = () => {
+
+  const { loginWithRedirect } = useAuth0()
+
+
   return (
     <Box display='flex' flexDirection='column' justifyContent='space-between' height={140}>
       <Button 
+        onClick={() => loginWithRedirect({
+          connection: 'google-oauth2'
+        })
+      }
         startIcon={<Icon path={mdiGoogle} {...icon} />}
         style={{
           ...button, 

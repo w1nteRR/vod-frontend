@@ -13,10 +13,6 @@ export const LinksList: FC = () => {
       name: 'Feed'
     },
     {
-      path: '/explore',
-      name: 'Explore'
-    },
-    {
       path: '/library',
       name: 'Library'
     }

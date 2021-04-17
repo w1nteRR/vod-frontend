@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const omdbApi = () => {
+export const auth0Api = () => {
   const api = axios.create({
     baseURL: `https://${process.env.REACT_APP_DOMAIN}`
   })
